@@ -8,8 +8,6 @@ export default function Survey({ answers, setAnswers }) {
 
   const submitForm = event => {
     event.preventDefault()
-    console.log(event)
-    console.log(event.target.form[0].checked)
 
     let color
     if (event.target.form[0].checked)
@@ -38,6 +36,8 @@ export default function Survey({ answers, setAnswers }) {
       name: event.target.form[9].value,
       email: event.target.form[10].value,
     }])
+
+    event.target.form.reset();
   }
 
   return (
